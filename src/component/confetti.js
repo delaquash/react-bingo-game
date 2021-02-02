@@ -35,11 +35,11 @@ export const start =()=>{
     function confettiParticle() {
       this.x = Math.random() * W; // x
       this.y = Math.random() * H - H; // y
-      this.r = randomFromTo(11, 33); // radius
-      this.d = Math.random() * maxConfettis + 11;
+      this.r = randomFromTo(9, 11); // radius
+      this.d = Math.random() * maxConfettis + 6;
       this.color =
         possibleColors[Math.floor(Math.random() * possibleColors.length)];
-      this.tilt = Math.floor(Math.random() * 33) - 11;
+      this.tilt = Math.floor(Math.random() * 11) - 9;
       this.tiltAngleIncremental = Math.random() * 0.07 + 0.05;
       this.tiltAngle = 0;
   

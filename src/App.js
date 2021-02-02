@@ -13,7 +13,7 @@ function Confetti() {
 }
 
 
-function Tile({ id, children, onToggle, isSet }) {
+function Box ({ id, children, onToggle, isSet }) {
   return (
     <div onClick={onToggle} className={`tile ${isSet ? "tile--set" : ""}`}>
       {children}
@@ -57,6 +57,7 @@ const data = shuffle(commonPhrase).reduce(
 
 function App() {
   const [state, setState] = useState({ checked: {} });
+  // Parameter to be fulfilled to check for winning
   const isWon = checked => {
     const range = [0, 1, 2, 3, 4];
     return (
@@ -84,14 +85,14 @@ function App() {
       <h1>Bingo Game</h1>
       <div className="wrapper">
         {Object.keys(data).map(id => (
-          <Tile
+          <Box
             key={id}
             id={id}
             isSet={!!state.checked[id]}
             onToggle={() => toggle(id)}
           >
             {data[id]}
-          </Tile>
+          </Box>
         ))}
       </div>
       {state.won ? <Confetti /> : null}
