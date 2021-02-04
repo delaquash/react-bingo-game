@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import shuffle from "shuffle-array";
+
 
 import './App.css';
 
@@ -22,35 +22,36 @@ function Box ({ id, children, onToggle, isSet }) {
 }
 
 const commonPhrase = [
-  "Great success",
-  "User engagement",
-  "Kodiak",
-  "Huge kudos to X",
-  "Suboptimal",
-  "Learning experience ",
-  "Personalized learning",
-  "Super excited ",
-  "Funnel",
-  "OKRs",
-  "Highest company priority ",
-  "It’s only a test",
-  "Operate like a startup",
-  "Keeping the momentum",
-  "The results look promising",
-  "Initial signals",
-  "Can’t wait to share results ",
-  "Significant increase ",
-  "High quality content",
-  "Keep product consistent ",
-  "Data driven ",
-  "Glorious X team",
-  "Allocate resources ",
-  "Alignment between X and Y",
-  "Happy to announce"
+  "JSX",
+  "Hooks",
+  "Redux",
+  "Functional Components",
+  "Props",
+  "State Management",
+  "Conditional Rendering",
+  "Class Component",
+  "Routers",
+  "Formik",
+  "Rest API ",
+  "Fetch API",
+  "NextJS",
+  "Higher Order Components",
+  "useState",
+  "useEffect",
+  "Async/Await",
+  "Material UI",
+  "setState",
+  "Axios",
+  "ComponentDidMount",
+  "Ternary Expressions",
+  "Event Handlers",
+  "Chakra UI",
+  "Tailwind CSS"
 ];
 
-// To re-arrange 
-const data = shuffle(commonPhrase).reduce(
+
+// I wanted to make the phrases re-arrange themselves, but decided to leave it.
+const data = (commonPhrase).reduce(
   (data, value, index) => ({ ...data, [index]: value }),
   {}
 );
@@ -82,7 +83,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Bingo Game</h1>
+      <h1>React Bingo Game</h1>
       <div className="wrapper">
         {Object.keys(data).map(id => (
           <Box

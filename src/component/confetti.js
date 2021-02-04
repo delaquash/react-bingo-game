@@ -2,7 +2,7 @@ import React from 'react';
 import confetti from 'canvas-confetti';
 
 
-export const start =()=>{
+export const start = ()=>{
     let W = window.innerWidth;
     let H = window.innerHeight;
     const canvas = document.getElementById("canvas");
@@ -12,7 +12,7 @@ export const start =()=>{
   
 
     // Confetti colors
-    const possibleColors = [
+    const confettiColors = [
       "DodgerBlue",
       "OliveDrab",
       "Gold",
@@ -38,7 +38,7 @@ export const start =()=>{
       this.r = randomFromTo(9, 11); // radius
       this.d = Math.random() * maxConfettis + 6;
       this.color =
-        possibleColors[Math.floor(Math.random() * possibleColors.length)];
+        confettiColors[Math.floor(Math.random() * confettiColors.length)];
       this.tilt = Math.floor(Math.random() * 11) - 9;
       this.tiltAngleIncremental = Math.random() * 0.07 + 0.05;
       this.tiltAngle = 0;
@@ -66,7 +66,7 @@ export const start =()=>{
       }
   
       let particle = {};
-      let remainingFlakes = 0;
+      
       for (let i = 0; i < maxConfettis; i++) {
         particle = particles[i];
   
@@ -74,7 +74,7 @@ export const start =()=>{
         particle.y += (Math.cos(particle.d) + 3 + particle.r / 2) / 2;
         particle.tilt = Math.sin(particle.tiltAngle - i / 3) * 15;
   
-        if (particle.y <= H) remainingFlakes++;
+        
   
         // if the confetti stops falling, bring it back and let it re-fall,
         if (particle.x > W + 30 || particle.x < -30 || particle.y > H) {
